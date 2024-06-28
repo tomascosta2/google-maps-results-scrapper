@@ -1,0 +1,2 @@
+# Activar entorno
+source myenv/bin/activate
