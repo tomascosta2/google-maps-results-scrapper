@@ -1,4 +1,4 @@
-#!/home/tomas/proyects/linkedin-scrapper/myenv/bin/python3
+#!/home/tomas/proyects/google-maps-results-scrapper/myenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

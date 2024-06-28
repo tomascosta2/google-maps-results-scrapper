@@ -15,7 +15,7 @@ archivo_csv = "datos_google_maps.csv"
 driver = webdriver.Chrome()
 
 # URL base de la búsqueda en Google Maps
-url_base = 'https://www.google.com/localservices/prolist?g2lbs=AOHF13lV_LkwhH_J3OJ6QQmIOSIlzYqqMCnPe0x_SfpLZtX7BBrHHbNpwj0__0riow9aRTb2_E2sapEVspCXXJjtL93PKgeWQBRMNwl28bol1r73OBYZP1-eckc8s36PE6SsKddwfFVC&hl=es-419&gl=ar&cs=1&ssta=1&q=agencia%20de%20marketing%20chile&oq=agencia%20de%20marketing%20chile&slp=MgBSAggCYACSAakCCg0vZy8xMWJ3NGo0ejB5Cg0vZy8xMXN4MDRrcWM1Cg0vZy8xMWJ3Xzc2M3Z0Cg0vZy8xMWM1c3ZiMXAzCg0vZy8xMWZrbDBzc194Cg0vZy8xMXB2M3FkeWpfCg0vZy8xMWMxdnAyc2x3Cg0vZy8xMWd2c3Ewdmh5Cg0vZy8xMWNqa3Brc19fCgwvZy8xaG0xXzE5MWoKDS9nLzExczBzZG10eDIKDS9nLzExYjgxc2pmbTQKDS9nLzExa25jdnNtMHgKDS9nLzExZ3J2M2xrMV8KDS9nLzExcDc0c3R4MjMKDC9nLzFxNm56OWYyNAoNL2cvMTFnNnd3bjJ2eAoML2cvMXBwMnZjcnp3Cg0vZy8xMXYxOXNnNThnCg0vZy8xMWdzbW1xbHE0mgEGCgIXGRAA&src=2&serdesk=1&sa=X&ved=2ahUKEwiZyMyWwv6GAxVPmZUCHbUvBb0QjGp6BAgmEAE&scp=ChVnY2lkOm1hcmtldGluZ19hZ2VuY3kSMxISCS-vJQRBxWKWER25AhET4QUFIgVDaGlsZSoUDVj4P94VWAtrvh0f9pH1JehudtgwABoUYWdlbmNpYSBkZSBtYXJrZXRpbmciGmFnZW5jaWEgZGUgbWFya2V0aW5nIGNoaWxlKhRBZ2VuY2lhIGRlIG1hcmtldGluZw%3D%3D'
+url_base = 'https://www.google.com/localservices/prolist?g2lbs=AOHF13lV_LkwhH_J3OJ6QQmIOSIlzYqqMCnPe0x_SfpLZtX7BBrHHbNpwj0__0riow9aRTb2_E2sapEVspCXXJjtL93PKgeWQBRMNwl28bol1r73OBYZP1-eckc8s36PE6SsKddwfFVC&hl=es-419&gl=ar&cs=1&ssta=1&oq=agencia%20de%20marketing%20chile&src=2&sa=X&scp=CgASABoAKgA%3D&q=agencia%20de%20dise%C3%B1o%20web%20chile&ved=2ahUKEwjG8ojZ_f6GAxUeWUgAHRp8D18QjdcJegQIABAF&slp=MgBAAVIECAIgAIgBAJoBBgoCFxkQAA%3D%3D'
 
 # Abrir el archivo CSV en modo escritura
 with open(archivo_csv, mode='w', newline='', encoding='utf-8') as csv_file:
@@ -27,9 +27,12 @@ with open(archivo_csv, mode='w', newline='', encoding='utf-8') as csv_file:
     
     # Escribir los encabezados
     writer.writeheader()
+
+    # Numero de resultados 
+    cantidad_de_resultados = 301
     
     # Iterar sobre los índices de página
-    for i in range(0, 281, 20):
+    for i in range(0, cantidad_de_resultados, 20):
         url_with_page = url_base + "&lci=" + str(i)
         print(url_with_page)
         
